@@ -1,12 +1,8 @@
 package com.epam.extlab.restaurant.entity.dto;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
 import java.time.LocalDateTime;
 
-@Entity(name = "Orders")
 public class Order {
-    @Id
     private long order_id;
     private long user_id;
     private long order_number;
