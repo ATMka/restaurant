@@ -13,7 +13,7 @@ import java.time.LocalDateTime;
 public class RestaurantApplication {
 
 	public static void main(String[] args) {
-		ConfigurableApplicationContext context = SpringApplication.run(AppConfig.class, args);
+		ConfigurableApplicationContext context = SpringApplication.run(RestaurantApplication.class, args);
 
 		UserService userService = context.getBean(UserService.class);
 
