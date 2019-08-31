@@ -1,22 +1,23 @@
 package com.epam.extlab.restaurant;
 
-import com.epam.extlab.restaurant.config.ConfigurationApp;
-import com.epam.extlab.restaurant.entity.*;
+import com.epam.extlab.restaurant.entity.dto.User;
+import com.epam.extlab.restaurant.service.UserService;
+import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.ConfigurableApplicationContext;
+
+import java.time.LocalDateTime;
 
 @SpringBootApplication
 public class RestaurantApplication {
 
 	public static void main(String[] args) {
-		//SpringApplication.run(RestaurantApplication.class, args);
-		ApplicationContext context = new AnnotationConfigApplicationContext(ConfigurationApp.class);
+		ConfigurableApplicationContext context = SpringApplication.run(RestaurantApplication.class, args);
 
-		Cat cat = context.getBean("getCat",Cat.class);
-		Dog dog = context.getBean("getDog",Dog.class);
-		System.out.println(cat.getName());
-		System.out.println(dog.getName());
+		UserService userService = context.getBean(UserService.class);
+
+		//userService.addUser(new User(1L,1,"Alex","atmka","111",true, LocalDateTime.now()));
+		System.out.println(userService.getAllUsers());
 	}
 
 }
