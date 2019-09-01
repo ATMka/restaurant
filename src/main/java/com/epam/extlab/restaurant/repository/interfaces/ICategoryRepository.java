@@ -1,15 +1,15 @@
 package com.epam.extlab.restaurant.repository.interfaces;
 
-import com.epam.extlab.restaurant.entity.dto.User;
+import com.epam.extlab.restaurant.entity.dto.Category;
 
 import java.util.List;
 
 public interface ICategoryRepository {
-    long addUser(User user);
+    long addCategory(Category category);
 
-    List<User> getAllUsers();
+    List<Category> getAllCategories();
 
-    User getUserById(long id);
+    Category getCategoryById(long id);
 
-    int deleteUserById(long id);
+    int deleteCategoryById(long id);
 }
