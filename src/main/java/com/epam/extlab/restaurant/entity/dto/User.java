@@ -24,6 +24,15 @@ public class User {
         this.update_time = update_time;
     }
 
+    public User(int active, String fullname, String login, String password, boolean is_admin, LocalDateTime update_time) {
+        this.active = active;
+        this.fullname = fullname;
+        this.login = login;
+        this.password = password;
+        this.is_admin = is_admin;
+        this.update_time = update_time;
+    }
+
     public long getUser_id() {
         return user_id;
     }
