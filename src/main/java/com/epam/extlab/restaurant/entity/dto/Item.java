@@ -26,6 +26,16 @@ public class Item {
         this.update_time = update_time;
     }
 
+    public Item(long category_id, String name, String description, double coast, String image, int active, LocalDateTime update_time) {
+        this.category_id = category_id;
+        this.name = name;
+        this.description = description;
+        this.coast = coast;
+        this.image = image;
+        this.active = active;
+        this.update_time = update_time;
+    }
+
     public long getItem_id() {
         return item_id;
     }

@@ -4,7 +4,7 @@ import com.epam.extlab.restaurant.entity.dto.User;
 
 import java.util.List;
 
-public interface IUserRepository {
+public interface ICategoryRepository {
     long addUser(User user);
 
     List<User> getAllUsers();
