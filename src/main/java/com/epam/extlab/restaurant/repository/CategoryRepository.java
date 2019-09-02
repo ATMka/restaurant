@@ -1,5 +1,6 @@
 package com.epam.extlab.restaurant.repository;
 
+import com.epam.extlab.restaurant.entity.dto.Category;
 import com.epam.extlab.restaurant.entity.dto.User;
 import com.epam.extlab.restaurant.repository.interfaces.ICategoryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,53 +21,51 @@ public class CategoryRepository implements ICategoryRepository {
     @Autowired
     private NamedParameterJdbcTemplate namedParameterJdbcTemplate;
 
-    private RowMapper<User> ROW_MAPPER = ((resultSet, rowNumber) -> new User(
-            resultSet.getLong("user_id"),
+    private RowMapper<Category> ROW_MAPPER = ((resultSet, rowNumber) -> new Category(
+            resultSet.getLong("category_id"),
+            resultSet.getLong("parent_id"),
+            resultSet.getString("name"),
+            resultSet.getString("description"),
             resultSet.getInt("active"),
-            resultSet.getString("fullname"),
-            resultSet.getString("login"),
-            resultSet.getString("password"),
-            resultSet.getBoolean("is_admin"),
             resultSet.getObject("update_time",LocalDateTime.class)));
 
 
     @Override
-    public long addUser(User user){
-        String sql = "INSERT INTO susers(active, fullname, login, password, update_time, is_admin) " +
-                    "VALUES(:active, :fullname, :login, :password, :update_time, :is_admin)";
+    public long addCategory(Category category){
+        String sql = "INSERT INTO scategory(parent_id, name, description, active, update_time) " +
+                    "VALUES(:subcategory_id, :name, :description, :active, :update_time)";
 
         GeneratedKeyHolder generatedKeyHolder = new GeneratedKeyHolder();
 
         MapSqlParameterSource namedParameters = new MapSqlParameterSource();
 
-        namedParameters.addValue("active", user.getActive());
-        namedParameters.addValue("fullname", user.getFullname());
-        namedParameters.addValue("login", user.getLogin());
-        namedParameters.addValue("password", user.getPassword());
-        namedParameters.addValue("update_time", user.getUpdate_time());
-        namedParameters.addValue("is_admin", user.isIs_admin());
+        namedParameters.addValue("parent_id", category.getParentId());
+        namedParameters.addValue("name", category.getName());
+        namedParameters.addValue("description", category.getDescription());
+        namedParameters.addValue("active", category.getActive());
+        namedParameters.addValue("update_time", category.getUpdateTime());
 
         namedParameterJdbcTemplate.update(sql, namedParameters, generatedKeyHolder);
-        user.setUser_id(generatedKeyHolder.getKey().longValue());
+        category.setCategoryId(generatedKeyHolder.getKey().longValue());
 
-        return user.getUser_id();
+        return category.getCategoryId();
     }
 
     @Override
-    public List<User> getAllUsers() {
-        String sql = "SELECT * FROM susers";
+    public List<Category> getAllCategories() {
+        String sql = "SELECT * FROM scategory";
         return jdbcTemplate.query(sql,ROW_MAPPER);
     }
 
     @Override
-    public User getUserById(long user_id) {
-        String sql = "SELECT * FROM susers WHERE user_id = ?";
-        return jdbcTemplate.queryForObject(sql,new Object[]{user_id},ROW_MAPPER);
+    public Category getCategoryById(long categoryId) {
+        String sql = "SELECT * FROM scategory WHERE category_id = ?";
+        return jdbcTemplate.queryForObject(sql,new Object[]{categoryId},ROW_MAPPER);
     }
 
     @Override
-    public int deleteUserById(long user_id) {
-        String sql = "DELETE FROM susers WHERE user_id = ?";
-        return jdbcTemplate.update(sql,user_id);
+    public int deleteCategoryById(long categoryId) {
+        String sql = "DELETE FROM scategory WHERE category_id = ?";
+        return jdbcTemplate.update(sql,categoryId);
     }
 }

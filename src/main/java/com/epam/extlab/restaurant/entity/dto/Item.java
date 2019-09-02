@@ -3,53 +3,53 @@ package com.epam.extlab.restaurant.entity.dto;
 import java.time.LocalDateTime;
 
 public class Item {
-    private long item_id;
-    private long category_id;
+    private long itemId;
+    private long categoryId;
     private String name;
     private String description;
     private double coast;
     private String image;
     private int active;
-    private LocalDateTime update_time;
+    private LocalDateTime updateTime;
 
     public Item() {
     }
 
-    public Item(long item_id, long category_id, String name, String description, double coast, String image, int active, LocalDateTime update_time) {
-        this.item_id = item_id;
-        this.category_id = category_id;
+    public Item(long itemId, long categoryId, String name, String description, double coast, String image, int active, LocalDateTime updateTime) {
+        this.itemId = itemId;
+        this.categoryId = categoryId;
         this.name = name;
         this.description = description;
         this.coast = coast;
         this.image = image;
         this.active = active;
-        this.update_time = update_time;
+        this.updateTime = updateTime;
     }
 
-    public Item(long category_id, String name, String description, double coast, String image, int active, LocalDateTime update_time) {
-        this.category_id = category_id;
+    public Item(long categoryId, String name, String description, double coast, String image, int active, LocalDateTime update_time) {
+        this.categoryId = categoryId;
         this.name = name;
         this.description = description;
         this.coast = coast;
         this.image = image;
         this.active = active;
-        this.update_time = update_time;
+        this.updateTime = update_time;
     }
 
-    public long getItem_id() {
-        return item_id;
+    public long getItemId() {
+        return itemId;
     }
 
-    public void setItem_id(long item_id) {
-        this.item_id = item_id;
+    public void setItemId(long itemId) {
+        this.itemId = itemId;
     }
 
-    public long getCategory_id() {
-        return category_id;
+    public long getCategoryId() {
+        return categoryId;
     }
 
-    public void setCategory_id(long category_id) {
-        this.category_id = category_id;
+    public void setCategoryId(long categoryId) {
+        this.categoryId = categoryId;
     }
 
     public String getName() {
@@ -92,25 +92,25 @@ public class Item {
         this.active = active;
     }
 
-    public LocalDateTime getUpdate_time() {
-        return update_time;
+    public LocalDateTime getUpdateTime() {
+        return updateTime;
     }
 
-    public void setUpdate_time(LocalDateTime update_time) {
-        this.update_time = update_time;
+    public void setUpdateTime(LocalDateTime updateTime) {
+        this.updateTime = updateTime;
     }
 
     @Override
     public String toString() {
         return "Item{" +
-                "item_id=" + item_id +
-                ", category_id=" + category_id +
+                "itemId=" + itemId +
+                ", categoryId=" + categoryId +
                 ", name='" + name + '\'' +
                 ", description='" + description + '\'' +
                 ", coast=" + coast +
                 ", image='" + image + '\'' +
                 ", active=" + active +
-                ", update_time=" + update_time +
+                ", updateTime=" + updateTime +
                 '}';
     }
 }

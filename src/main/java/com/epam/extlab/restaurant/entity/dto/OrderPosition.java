@@ -3,47 +3,47 @@ package com.epam.extlab.restaurant.entity.dto;
 import java.time.LocalDateTime;
 
 public class OrderPosition {
-    private long position_id;
-    private long order_id;
-    private long item_id;
+    private long positionId;
+    private long orderId;
+    private long itemId;
     private double coast;
     private int active;
-    private LocalDateTime update_time;
+    private LocalDateTime updateTime;
 
     public OrderPosition() {
     }
 
-    public OrderPosition(long position_id, long order_id, long item_id, double coast, int active, LocalDateTime update_time) {
-        this.position_id = position_id;
-        this.order_id = order_id;
-        this.item_id = item_id;
+    public OrderPosition(long positionId, long orderId, long itemId, double coast, int active, LocalDateTime updateTime) {
+        this.positionId = positionId;
+        this.orderId = orderId;
+        this.itemId = itemId;
         this.coast = coast;
         this.active = active;
-        this.update_time = update_time;
+        this.updateTime = updateTime;
     }
 
-    public long getPosition_id() {
-        return position_id;
+    public long getPositionId() {
+        return positionId;
     }
 
-    public void setPosition_id(long position_id) {
-        this.position_id = position_id;
+    public void setPositionId(long positionId) {
+        this.positionId = positionId;
     }
 
-    public long getOrder_id() {
-        return order_id;
+    public long getOrderId() {
+        return orderId;
     }
 
-    public void setOrder_id(long order_id) {
-        this.order_id = order_id;
+    public void setOrderId(long orderId) {
+        this.orderId = orderId;
     }
 
-    public long getItem_id() {
-        return item_id;
+    public long getItemId() {
+        return itemId;
     }
 
-    public void setItem_id(long item_id) {
-        this.item_id = item_id;
+    public void setItemId(long itemId) {
+        this.itemId = itemId;
     }
 
     public double getCoast() {
@@ -62,23 +62,23 @@ public class OrderPosition {
         this.active = active;
     }
 
-    public LocalDateTime getUpdate_time() {
-        return update_time;
+    public LocalDateTime getUpdateTime() {
+        return updateTime;
     }
 
-    public void setUpdate_time(LocalDateTime update_time) {
-        this.update_time = update_time;
+    public void setUpdateTime(LocalDateTime updateTime) {
+        this.updateTime = updateTime;
     }
 
     @Override
     public String toString() {
         return "OrderPosition{" +
-                "position_id=" + position_id +
-                ", order_id=" + order_id +
-                ", item_id=" + item_id +
+                "positionId=" + positionId +
+                ", orderId=" + orderId +
+                ", itemId=" + itemId +
                 ", coast=" + coast +
                 ", active=" + active +
-                ", update_time=" + update_time +
+                ", updateTime=" + updateTime +
                 '}';
     }
 }

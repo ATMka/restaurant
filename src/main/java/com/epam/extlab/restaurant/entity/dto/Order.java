@@ -3,45 +3,45 @@ package com.epam.extlab.restaurant.entity.dto;
 import java.time.LocalDateTime;
 
 public class Order {
-    private long order_id;
-    private long user_id;
-    private long order_number;
+    private long orderId;
+    private long userId;
+    private long orderNumber;
     private int active;
-    private LocalDateTime update_time;
+    private LocalDateTime updateTime;
 
     public Order() {
     }
 
-    public Order(long order_id, long user_id, long order_number, int active, LocalDateTime update_time) {
-        this.order_id = order_id;
-        this.user_id = user_id;
-        this.order_number = order_number;
+    public Order(long orderId, long userId, long orderNumber, int active, LocalDateTime updateTime) {
+        this.orderId = orderId;
+        this.userId = userId;
+        this.orderNumber = orderNumber;
         this.active = active;
-        this.update_time = update_time;
+        this.updateTime = updateTime;
     }
 
-    public long getOrder_id() {
-        return order_id;
+    public long getOrderId() {
+        return orderId;
     }
 
-    public void setOrder_id(long order_id) {
-        this.order_id = order_id;
+    public void setOrderId(long orderId) {
+        this.orderId = orderId;
     }
 
-    public long getUser_id() {
-        return user_id;
+    public long getUserId() {
+        return userId;
     }
 
-    public void setUser_id(long user_id) {
-        this.user_id = user_id;
+    public void setUserId(long userId) {
+        this.userId = userId;
     }
 
-    public long getOrder_number() {
-        return order_number;
+    public long getOrderNumber() {
+        return orderNumber;
     }
 
-    public void setOrder_number(long order_number) {
-        this.order_number = order_number;
+    public void setOrderNumber(long orderNumber) {
+        this.orderNumber = orderNumber;
     }
 
     public int getActive() {
@@ -52,22 +52,22 @@ public class Order {
         this.active = active;
     }
 
-    public LocalDateTime getUpdate_time() {
-        return update_time;
+    public LocalDateTime getUpdateTime() {
+        return updateTime;
     }
 
-    public void setUpdate_time(LocalDateTime update_time) {
-        this.update_time = update_time;
+    public void setUpdateTime(LocalDateTime updateTime) {
+        this.updateTime = updateTime;
     }
 
     @Override
     public String toString() {
         return "Order{" +
-                "order_id=" + order_id +
-                ", user_id=" + user_id +
-                ", order_number=" + order_number +
+                "orderId=" + orderId +
+                ", userId=" + userId +
+                ", orderNumber=" + orderNumber +
                 ", active=" + active +
-                ", update_time=" + update_time +
+                ", updateTime=" + updateTime +
                 '}';
     }
 }

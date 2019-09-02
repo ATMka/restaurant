@@ -17,7 +17,7 @@ public class RestaurantApplication {
 
 		UserService userService = context.getBean(UserService.class);
 
-		//userService.addUser(new User(1,"Alex","atmka","111",true, LocalDateTime.now()));
+		//userService.addItem(new User(1,"Alex","atmka","111",true, LocalDateTime.now()));
 		System.out.println(userService.getUserById(1).getFullname());
 	}
 

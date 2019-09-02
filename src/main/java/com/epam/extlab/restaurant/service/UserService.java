@@ -24,12 +24,12 @@ public class UserService implements IUserService {
     }
 
     @Override
-    public User getUserById(long user_id){
-        return userRepository.getUserById(user_id);
+    public User getUserById(long userId){
+        return userRepository.getUserById(userId);
     }
 
     @Override
-    public void deleteUserById(long user_id){
-        userRepository.deleteUserById(user_id);
+    public void deleteUserById(long userId){
+        userRepository.deleteUserById(userId);
     }
 }

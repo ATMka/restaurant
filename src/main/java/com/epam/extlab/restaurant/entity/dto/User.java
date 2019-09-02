@@ -3,25 +3,25 @@ package com.epam.extlab.restaurant.entity.dto;
 import java.time.LocalDateTime;
 
 public class User {
-    private long user_id;
+    private long userId;
     private int active;
     private String fullname;
     private String login;
     private String password;
-    private boolean is_admin;
-    private LocalDateTime update_time;
+    private boolean isAdmin;
+    private LocalDateTime updateTime;
 
     public User() {
     }
 
     public User(long user_id, int active, String fullname, String login, String password, boolean is_admin, LocalDateTime update_time) {
-        this.user_id = user_id;
+        this.userId = user_id;
         this.active = active;
         this.fullname = fullname;
         this.login = login;
         this.password = password;
-        this.is_admin = is_admin;
-        this.update_time = update_time;
+        this.isAdmin = is_admin;
+        this.updateTime = update_time;
     }
 
     public User(int active, String fullname, String login, String password, boolean is_admin, LocalDateTime update_time) {
@@ -29,16 +29,16 @@ public class User {
         this.fullname = fullname;
         this.login = login;
         this.password = password;
-        this.is_admin = is_admin;
-        this.update_time = update_time;
+        this.isAdmin = is_admin;
+        this.updateTime = update_time;
     }
 
-    public long getUser_id() {
-        return user_id;
+    public long getUserId() {
+        return userId;
     }
 
-    public void setUser_id(long user_id) {
-        this.user_id = user_id;
+    public void setUserId(long userId) {
+        this.userId = userId;
     }
 
     public int getActive() {
@@ -73,32 +73,32 @@ public class User {
         this.password = password;
     }
 
-    public boolean isIs_admin() {
-        return is_admin;
+    public boolean isAdmin() {
+        return isAdmin;
     }
 
-    public void setIs_admin(boolean is_admin) {
-        this.is_admin = is_admin;
+    public void setAdmin(boolean admin) {
+        this.isAdmin = admin;
     }
 
-    public LocalDateTime getUpdate_time() {
-        return update_time;
+    public LocalDateTime getUpdateTime() {
+        return updateTime;
     }
 
-    public void setUpdate_time(LocalDateTime update_time) {
-        this.update_time = update_time;
+    public void setUpdateTime(LocalDateTime updateTime) {
+        this.updateTime = updateTime;
     }
 
     @Override
     public String toString() {
         return "User{" +
-                "user_id=" + user_id +
+                "userId=" + userId +
                 ", active=" + active +
                 ", fullname='" + fullname + '\'' +
                 ", login='" + login + '\'' +
                 ", password='" + password + '\'' +
-                ", is_admin=" + is_admin +
-                ", update_time=" + update_time +
+                ", isAdmin=" + isAdmin +
+                ", updateTime=" + updateTime +
                 '}';
     }
 }

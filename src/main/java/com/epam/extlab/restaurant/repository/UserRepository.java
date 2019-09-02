@@ -10,7 +10,6 @@ import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.jdbc.support.GeneratedKeyHolder;
 import org.springframework.stereotype.Repository;
 
-import java.sql.SQLException;
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -44,13 +43,13 @@ public class UserRepository implements IUserRepository {
         namedParameters.addValue("fullname", user.getFullname());
         namedParameters.addValue("login", user.getLogin());
         namedParameters.addValue("password", user.getPassword());
-        namedParameters.addValue("update_time", user.getUpdate_time());
-        namedParameters.addValue("is_admin", user.isIs_admin());
+        namedParameters.addValue("update_time", user.getUpdateTime());
+        namedParameters.addValue("is_admin", user.isAdmin());
 
         namedParameterJdbcTemplate.update(sql, namedParameters, generatedKeyHolder);
-        user.setUser_id(generatedKeyHolder.getKey().longValue());
+        user.setUserId(generatedKeyHolder.getKey().longValue());
 
-        return user.getUser_id();
+        return user.getUserId();
     }
 
     @Override
@@ -60,14 +59,14 @@ public class UserRepository implements IUserRepository {
     }
 
     @Override
-    public User getUserById(long user_id) {
+    public User getUserById(long userId) {
         String sql = "SELECT * FROM susers WHERE user_id = ?";
-        return jdbcTemplate.queryForObject(sql,new Object[]{user_id},ROW_MAPPER);
+        return jdbcTemplate.queryForObject(sql,new Object[]{userId},ROW_MAPPER);
     }
 
     @Override
-    public int deleteUserById(long user_id) {
+    public int deleteUserById(long userId) {
         String sql = "DELETE FROM susers WHERE user_id = ?";
-        return jdbcTemplate.update(sql,user_id);
+        return jdbcTemplate.update(sql,userId);
     }
 }

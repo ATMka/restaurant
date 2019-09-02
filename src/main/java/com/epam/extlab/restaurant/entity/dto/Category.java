@@ -3,39 +3,39 @@ package com.epam.extlab.restaurant.entity.dto;
 import java.time.LocalDateTime;
 
 public class Category {
-    private long category_id;
-    private long subcategory_id;
+    private long categoryId;
+    private long parentId;
     private String name;
     private String description;
     private int active;
-    private LocalDateTime update_time;
+    private LocalDateTime updateTime;
 
     public Category() {
     }
 
-    public Category(long category_id, long subcategory_id, String name, String description, int active, LocalDateTime update_time) {
-        this.category_id = category_id;
-        this.subcategory_id = subcategory_id;
+    public Category(long categoryId, long parentId, String name, String description, int active, LocalDateTime updateTime) {
+        this.categoryId = categoryId;
+        this.parentId = parentId;
         this.name = name;
         this.description = description;
         this.active = active;
-        this.update_time = update_time;
+        this.updateTime = updateTime;
     }
 
-    public long getCategory_id() {
-        return category_id;
+    public long getCategoryId() {
+        return categoryId;
     }
 
-    public void setCategory_id(long category_id) {
-        this.category_id = category_id;
+    public void setCategoryId(long categoryId) {
+        this.categoryId = categoryId;
     }
 
-    public long getSubcategory_id() {
-        return subcategory_id;
+    public long getParentId() {
+        return parentId;
     }
 
-    public void setSubcategory_id(long subcategory_id) {
-        this.subcategory_id = subcategory_id;
+    public void setParentId(long parentId) {
+        this.parentId = parentId;
     }
 
     public String getName() {
@@ -62,23 +62,23 @@ public class Category {
         this.active = active;
     }
 
-    public LocalDateTime getUpdate_time() {
-        return update_time;
+    public LocalDateTime getUpdateTime() {
+        return updateTime;
     }
 
-    public void setUpdate_time(LocalDateTime update_time) {
-        this.update_time = update_time;
+    public void setUpdateTime(LocalDateTime updateTime) {
+        this.updateTime = updateTime;
     }
 
     @Override
     public String toString() {
         return "Category{" +
-                "category_id=" + category_id +
-                ", subcategory_id=" + subcategory_id +
+                "categoryId=" + categoryId +
+                ", parentId=" + parentId +
                 ", name='" + name + '\'' +
                 ", description='" + description + '\'' +
                 ", active=" + active +
-                ", update_time=" + update_time +
+                ", updateTime=" + updateTime +
                 '}';
     }
 }

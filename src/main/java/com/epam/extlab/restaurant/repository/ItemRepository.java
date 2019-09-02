@@ -40,16 +40,16 @@ public class ItemRepository implements IItemRepository {
 
         MapSqlParameterSource namedParameters = new MapSqlParameterSource();
 
-        namedParameters.addValue("category_id", item.getCategory_id());
+        namedParameters.addValue("category_id", item.getCategoryId());
         namedParameters.addValue("name", item.getName());
         namedParameters.addValue("description", item.getDescription());
         namedParameters.addValue("coast", item.getCoast());
         namedParameters.addValue("active", item.getActive());
-        namedParameters.addValue("update_time", item.getUpdate_time());
+        namedParameters.addValue("update_time", item.getUpdateTime());
 
         namedParameterJdbcTemplate.update(sql, namedParameters, generatedKeyHolder);
-        item.setItem_id(generatedKeyHolder.getKey().longValue());
-        return item.getItem_id();
+        item.setItemId(generatedKeyHolder.getKey().longValue());
+        return item.getItemId();
     }
 
     @Override
@@ -59,14 +59,14 @@ public class ItemRepository implements IItemRepository {
     }
 
     @Override
-    public Item getItemById(long item_id) {
+    public Item getItemById(long itemId) {
         String sql = "SELECT * FROM sitems WHERE item_id = ?";
-        return jdbcTemplate.queryForObject(sql,new Object[]{item_id},ROW_MAPPER);
+        return jdbcTemplate.queryForObject(sql,new Object[]{itemId},ROW_MAPPER);
     }
 
     @Override
-    public int deleteItemById(long item_id) {
+    public int deleteItemById(long itemId) {
         String sql = "DELETE FROM sitems WHERE item_id = ?";
-        return jdbcTemplate.update(sql,item_id);
+        return jdbcTemplate.update(sql,itemId);
     }
 }
