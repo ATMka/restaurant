@@ -29,7 +29,7 @@ public class UserService implements IUserService {
     }
 
     @Override
-    public void deleteUserById(long userId){
-        userRepository.deleteUserById(userId);
+    public int deleteUserById(long userId){
+        return userRepository.deleteUserById(userId);
     }
 }

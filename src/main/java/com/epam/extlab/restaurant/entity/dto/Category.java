@@ -22,6 +22,14 @@ public class Category {
         this.updateTime = updateTime;
     }
 
+    public Category(long parentId, String name, String description, int active, LocalDateTime updateTime) {
+        this.parentId = parentId;
+        this.name = name;
+        this.description = description;
+        this.active = active;
+        this.updateTime = updateTime;
+    }
+
     public long getCategoryId() {
         return categoryId;
     }
