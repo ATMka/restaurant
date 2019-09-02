@@ -12,13 +12,13 @@ import java.time.LocalDateTime;
 @SpringBootApplication
 public class RestaurantApplication {
 
-	public static void main(String[] args) {
-		ConfigurableApplicationContext context = SpringApplication.run(RestaurantApplication.class, args);
+    public static void main(String[] args) {
+        ConfigurableApplicationContext context = SpringApplication.run(RestaurantApplication.class, args);
 
-		UserService userService = context.getBean(UserService.class);
+        UserService userService = context.getBean(UserService.class);
 
-		//userService.addItem(new User(1,"Alex","atmka","111",true, LocalDateTime.now()));
-		System.out.println(userService.getUserById(1).getFullname());
-	}
+        //userService.addItem(new User(1,"Alex","atmka","111",true, LocalDateTime.now()));
+        System.out.println(userService.getUserById(1).getFullname());
+    }
 
 }
