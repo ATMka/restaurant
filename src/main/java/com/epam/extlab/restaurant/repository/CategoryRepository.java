@@ -23,7 +23,7 @@ public class CategoryRepository implements ICategoryRepository {
 
     private RowMapper<Category> ROW_MAPPER = ((resultSet, rowNumber) -> new Category(
             resultSet.getLong("category_id"),
-            resultSet.getObject("parent_id",Long.class),
+            resultSet.getLong("parent_id"),
             resultSet.getString("name"),
             resultSet.getString("description"),
             resultSet.getInt("active"),

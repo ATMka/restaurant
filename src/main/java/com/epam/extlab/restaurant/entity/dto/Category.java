@@ -4,7 +4,7 @@ import java.time.LocalDateTime;
 
 public class Category {
     private long categoryId;
-    private Long parentId;
+    private long parentId;
     private String name;
     private String description;
     private int active;
@@ -13,7 +13,7 @@ public class Category {
     public Category() {
     }
 
-    public Category(Long parentId, String name, String description, int active, LocalDateTime updateTime) {
+    public Category(long parentId, String name, String description, int active, LocalDateTime updateTime) {
         this.parentId = parentId;
         this.name = name;
         this.description = description;
@@ -21,7 +21,7 @@ public class Category {
         this.updateTime = updateTime;
     }
 
-    public Category(long categoryId, Long parentId, String name, String description, int active, LocalDateTime updateTime) {
+    public Category(long categoryId, long parentId, String name, String description, int active, LocalDateTime updateTime) {
         this.categoryId = categoryId;
         this.parentId = parentId;
         this.name = name;

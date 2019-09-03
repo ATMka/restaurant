@@ -45,7 +45,7 @@ public class Demo {
             System.out.println("Пользователь не найден. Удаление невозможно.");
         }
 
-        categoryService.addCategory(new Category(null, "Горячие блюда", "Самые горячие блюда", 1, LocalDateTime.now()));
+//        categoryService.addCategory(new Category(null, "Горячие блюда", "Самые горячие блюда", 1, LocalDateTime.now()));
 
         for (Category category:categoryService.getAllCategories()) {
             System.out.println(category);
