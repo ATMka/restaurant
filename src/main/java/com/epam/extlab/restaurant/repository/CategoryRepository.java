@@ -23,7 +23,7 @@ public class CategoryRepository implements ICategoryRepository {
 
     private RowMapper<Category> ROW_MAPPER = ((resultSet, rowNumber) -> new Category(
             resultSet.getLong("category_id"),
-            resultSet.getLong("parent_id"),
+            resultSet.getObject("parent_id",Long.class),
             resultSet.getString("name"),
             resultSet.getString("description"),
             resultSet.getInt("active"),
@@ -33,7 +33,7 @@ public class CategoryRepository implements ICategoryRepository {
     @Override
     public long addCategory(Category category){
         String sql = "INSERT INTO scategory(parent_id, name, description, active, update_time) " +
-                    "VALUES(:subcategory_id, :name, :description, :active, :update_time)";
+                    "VALUES(:parent_id, :name, :description, :active, :update_time)";
 
         GeneratedKeyHolder generatedKeyHolder = new GeneratedKeyHolder();
 
@@ -67,5 +67,12 @@ public class CategoryRepository implements ICategoryRepository {
     public int deleteCategoryById(long categoryId) {
         String sql = "DELETE FROM scategory WHERE category_id = ?";
         return jdbcTemplate.update(sql,categoryId);
+    }
+
+    public String isNullStringForSqlQuery(Object object){
+        if(object.equals(null)){
+            return "IS NULL";
+        }
+        return "=";
     }
 }
