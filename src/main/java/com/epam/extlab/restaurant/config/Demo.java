@@ -27,13 +27,13 @@ public class Demo {
     private CategoryService categoryService;
 
     public void go(){
-        userService.addUser(new User(1, "Tom Tompkins", "login1","111",false, LocalDateTime.now()));
-        userService.addUser(new User(0, "Tom Holland", "login2","111",false, LocalDateTime.now()));
-        userService.addUser(new User(1, "Васька Петров", "login3","111",false, LocalDateTime.now()));
-        userService.addUser(new User(0, "Антон Шевчук", "login4","111",true, LocalDateTime.now()));
-        userService.addUser(new User(0, "Алексей Биянов", "login5","111",true, LocalDateTime.now()));
-        userService.addUser(new User(1, "Какой-то чел", "login6","111",false, LocalDateTime.now()));
-        userService.addUser(new User(0, "Ещё один непонятный", "login7","111",false, LocalDateTime.now()));
+//        userService.addUser(new User(1, "Tom Tompkins", "login1","111",false, LocalDateTime.now()));
+//        userService.addUser(new User(0, "Tom Holland", "login2","111",false, LocalDateTime.now()));
+//        userService.addUser(new User(1, "Васька Петров", "login3","111",false, LocalDateTime.now()));
+//        userService.addUser(new User(0, "Антон Шевчук", "login4","111",true, LocalDateTime.now()));
+//        userService.addUser(new User(0, "Алексей Биянов", "login5","111",true, LocalDateTime.now()));
+//        userService.addUser(new User(1, "Какой-то чел", "login6","111",false, LocalDateTime.now()));
+//        userService.addUser(new User(0, "Ещё один непонятный", "login7","111",false, LocalDateTime.now()));
 
         for (User user:userService.getAllUsers()) {
             System.out.println(user);
