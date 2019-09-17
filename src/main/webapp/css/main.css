@@ -1,0 +1,78 @@
+.form{
+    width: 300px;
+    height: 180px;
+    position:absolute;
+    left:50%;
+    top:50%;
+    margin:-90px 0 0 -150px;
+    border: 1px solid #787878;
+    border-radius: 10px;
+    text-shadow: 0 2px 1px rgba(0,0,0,0.3);
+    font-family: 'Raleway', 'Lato', Arial, sans-serif;
+}
+
+h1{
+    margin: 0;
+    padding: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+    font-size: 22px;
+}
+
+.form p {
+    padding-bottom: 10px;
+    text-align: center;
+    margin: auto;
+}
+.form input[type=text],
+.form input[type=password]{
+    width: 186px;
+    padding: 8px 4px 8px 10px;
+}
+.form input[type=submit],
+.form input[type=button]{
+    width: 100px;
+    height: 30px;
+}
+
+.main-form{
+    width: 700px;
+    height: 80%;
+    position:absolute;
+    left:50%;
+    top:20px;
+    margin: 0 0 0 -350px;
+    border: 1px solid #787878;
+    border-radius: 10px;
+    text-shadow: 0 2px 1px rgba(0,0,0,0.3);
+    font-family: 'Raleway', 'Lato', Arial, sans-serif;
+}
+
+.main-menu{
+    width: 100%;
+    height: 20px;
+    padding-top: 10px;
+}
+
+ul{
+    list-style: none; /*убираем маркеры списка*/
+    margin: 10px; /*убираем верхнее и нижнее поле, равное 1em*/
+    padding-left: 0; /*убираем левый отступ, равный 40px*/
+    display: flex;
+}
+
+li {
+    border-radius: 10px;
+    background-color: #d9d9d9;
+    padding: 5px;
+    margin-right: 13px;
+}
+
+a {
+    display: block;
+    text-decoration: none; /*убираем подчеркивание текста ссылок*/
+    color: black;
+}
+li:hover{
+    background-color: darkgrey;
+}

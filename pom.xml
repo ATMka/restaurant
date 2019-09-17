@@ -15,6 +15,8 @@
 	<description>Final project from ExtLab EPAM</description>
 
 	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
 	</properties>
 
@@ -42,20 +44,23 @@
 			<version>8.0.17</version>
 		</dependency>
 
-        <!-- Pull in as a traditional dependency -->
-        <dependency>
-            <groupId>com.konghq</groupId>
-            <artifactId>unirest-java</artifactId>
-            <version>2.3.16</version>
-        </dependency>
+		<!-- Библиотека для компилирования JSP -->
+		<dependency>
+			<groupId>org.apache.tomcat.embed</groupId>
+			<artifactId>tomcat-embed-jasper</artifactId>
+		</dependency>
 
-        <!-- OR as a snazzy new standalone jar with shaded dependencies -->
-        <dependency>
-            <groupId>com.konghq</groupId>
-            <artifactId>unirest-java</artifactId>
-            <version>2.3.16</version>
-            <classifier>standalone</classifier>
-        </dependency>
+		<!-- Библиотека для работы с JSTL -->
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>jstl</artifactId>
+		</dependency>
+
+		<!-- Стартер для включения в данный проект настроек запуска веб приложения -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
 
 	</dependencies>
 
