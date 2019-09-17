@@ -7,6 +7,8 @@ import java.util.List;
 public interface IUserRepository {
     long addUser(User user);
 
+    User addUserLoginPassword(User user);
+
     List<User> getAllUsers();
 
     User getUserById(long id);

@@ -33,6 +33,11 @@ public class User {
         this.updateTime = update_time;
     }
 
+    public User(String login, String password) {
+        this.login = login;
+        this.password = password;
+    }
+
     public long getUserId() {
         return userId;
     }

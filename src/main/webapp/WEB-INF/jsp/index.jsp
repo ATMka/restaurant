@@ -4,20 +4,23 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link href="/css/main.css" rel="stylesheet">
+    <link href="/css/main.css" method="post" rel="stylesheet">
 </head>
     <body>
-        <form class="form">
+        <form action="/login" class="form">
                 <h1>Авторизация</h1>
                 <p>
-                    <input type="text" name="login" placeholder="Логин" required>
+                    <input id ="login" type="text" name="login" placeholder="Логин">
                 </p>
                 <p>
-                    <input type="password" name='password' placeholder="Пароль" required>
+                    <input type="password" name='password' placeholder="Пароль">
                 </p>
                 <p>
                     <input type="submit" name="submit" value="Вход">
                     <input type="button" name="registration" value="Регистрация" onclick="location.href='registration.html'">
+                </p>
+                <p>
+                ${errorMsg}
                 </p>
         </form>
     </body>
