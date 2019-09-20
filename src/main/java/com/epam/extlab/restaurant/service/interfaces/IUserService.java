@@ -8,6 +8,8 @@ import java.util.Optional;
 public interface IUserService {
     long addUser(User user);
 
+    User addUserLoginPassword(User user);
+
     List<User> getAllUsers();
 
     User getUserById(long id);
@@ -17,4 +19,6 @@ public interface IUserService {
     Optional<User> findUserByLogin(String login);
 
     boolean authorize(User authorizedUser);
+
+
 }

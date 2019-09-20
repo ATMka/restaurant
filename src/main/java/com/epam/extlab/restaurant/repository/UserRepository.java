@@ -54,15 +54,17 @@ public class UserRepository implements IUserRepository {
 
     @Override
     public User addUserLoginPassword(User user) {
-        String sql = "INSERT INTO susers(active, fullname, login, password, is_admin) " +
-                "VALUES(1, '', :login, :password, false)";
+        String sql = "INSERT INTO susers(active, fullname, login, password, is_admin, update_time) " +
+                "VALUES(:active, '', :login, :password, false, :update_time)";
 
         GeneratedKeyHolder generatedKeyHolder = new GeneratedKeyHolder();
 
         MapSqlParameterSource namedParameters = new MapSqlParameterSource();
 
+        namedParameters.addValue("active", user.getActive());
         namedParameters.addValue("login", user.getLogin());
         namedParameters.addValue("password", user.getPassword());
+        namedParameters.addValue("update_time", user.getUpdateTime());
 
         namedParameterJdbcTemplate.update(sql, namedParameters, generatedKeyHolder);
         user.setUserId(generatedKeyHolder.getKey().longValue());

@@ -8,10 +8,11 @@
 </head>
     <body>
        <div class="main-form">
+       <div>Пользователь: ${userName}</div><a href="/logout">Выход</a>
                 <ul>
-                    <li><a href="main.html">Главная</a></li>
-                    <li><a href="index.html">Вход</a></li>
-                    <li><a href="registration.html">Регистрация</a></li>
+                    <li><a href="/main">Главная</a></li>
+                    <li><a href="/login">Вход</a></li>
+                    <li><a href="/registration">Регистрация</a></li>
                     <li><a href="">Меню</a></li>
                     <li><a href="">Корзина</a></li>
                 </ul>

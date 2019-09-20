@@ -1,20 +1,35 @@
 package com.epam.extlab.restaurant.entity.dto;
 
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Size;
 import java.time.LocalDateTime;
 
 public class User {
     private long userId;
-    private int active;
+    private int active = 1;
     private String fullname;
+
+    @NotEmpty(message="Логин должен быть заполнен")
+    @Size(min = 3, message="Логин должен быть длиннее 3 символов")
     private String login;
+
+    @NotEmpty(message="Пароль должен быть заполнен")
+    @Size(min = 3, message="Пароль должен быть длиннее 3 символов")
     private String password;
+
+
     private boolean isAdmin;
-    private LocalDateTime updateTime;
+    private LocalDateTime updateTime = LocalDateTime.now();
 
     public User() {
     }
 
-    public User(long user_id, int active, String fullname, String login, String password, boolean is_admin, LocalDateTime update_time) {
+    public User(long user_id, int active, String fullname,
+                @NotEmpty(message="Логин должен быть заполнен")
+                @Size(min = 3, message="Логин должен быть длиннее 3 символов")String login,
+                @NotEmpty(message="Пароль должен быть заполнен")
+                @Size(min = 3, message="Пароль должен быть длиннее 3 символов") String password,
+                boolean is_admin, LocalDateTime update_time) {
         this.userId = user_id;
         this.active = active;
         this.fullname = fullname;
@@ -24,7 +39,12 @@ public class User {
         this.updateTime = update_time;
     }
 
-    public User(int active, String fullname, String login, String password, boolean is_admin, LocalDateTime update_time) {
+    public User(int active, String fullname,
+                @NotEmpty(message="Логин должен быть заполнен")
+                @Size(min = 3, message="Логин должен быть длиннее 3 символов")String login,
+                @NotEmpty(message="Пароль должен быть заполнен")
+                @Size(min = 3, message="Пароль должен быть длиннее 3 символов") String password,
+                boolean is_admin, LocalDateTime update_time) {
         this.active = active;
         this.fullname = fullname;
         this.login = login;
@@ -33,7 +53,11 @@ public class User {
         this.updateTime = update_time;
     }
 
-    public User(String login, String password) {
+    public User(
+            @NotEmpty(message="Логин должен быть заполнен")
+            @Size(min = 3, message="Логин должен быть длиннее 3 символов")String login,
+            @NotEmpty(message="Пароль должен быть заполнен")
+            @Size(min = 3, message="Пароль должен быть длиннее 3 символов") String password) {
         this.login = login;
         this.password = password;
     }

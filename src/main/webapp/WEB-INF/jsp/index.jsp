@@ -7,17 +7,17 @@
     <link href="/css/main.css" method="post" rel="stylesheet">
 </head>
     <body>
-        <form action="/login" class="form">
+        <form action="/login" class="form" method="post">
                 <h1>Авторизация</h1>
                 <p>
                     <input id ="login" type="text" name="login" placeholder="Логин">
                 </p>
                 <p>
-                    <input type="password" name='password' placeholder="Пароль">
+                    <input id ="password" type="password" name='password' placeholder="Пароль">
                 </p>
                 <p>
                     <input type="submit" name="submit" value="Вход">
-                    <input type="button" name="registration" value="Регистрация" onclick="location.href='registration.html'">
+                    <input type="button" name="registration" value="Регистрация" onclick="location.href='/registration'">
                 </p>
                 <p>
                 ${errorMsg}
